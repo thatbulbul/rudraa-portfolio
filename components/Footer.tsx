@@ -7,7 +7,7 @@ const rand = (min: number, max: number) =>
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border py-4 px-4">
+    <footer className="border-t border-border py-4 px-4 bg-background">
 
       {/* ✅ Smaller + Scroll Safe */}
       <div className="w-full h-[160px] relative overflow-hidden">
