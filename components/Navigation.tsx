@@ -16,7 +16,7 @@ export default function Navigation() {
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <Link href="/" className="font-bold text-xl tracking-tight">
-          Alexander Chen
+          Rudra Mittal
         </Link>
 
         <div className="hidden md:flex items-center gap-8">

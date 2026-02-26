@@ -51,22 +51,21 @@ export default function Contact() {
               <div>
                 <p className="text-sm text-muted-foreground mb-1">Email</p>
                 <a href="mailto:contact@alexanderchen.com" className="font-medium hover:text-accent transition-colors">
-                  contact@alexanderchen.com
+                  contact@Rudramittal6@gmail.com
                 </a>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground mb-1">Phone</p>
                 <a href="tel:+1234567890" className="font-medium hover:text-accent transition-colors">
-                  +1 (234) 567-890
+                  +91  8077 352 107
                 </a>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground mb-3">Follow</p>
                 <div className="flex gap-4">
                   {[
-                    { name: 'Instagram', url: '#' },
-                    { name: 'Vimeo', url: '#' },
-                    { name: 'LinkedIn', url: '#' },
+                    { name: 'Instagram', url: 'https://www.instagram.com/rudra_mittal001?igsh=MWNkd2tzMGRseGN6' },
+                    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/rudra-mittal-846a2a249/' },
                   ].map((social) => (
                     <a
                       key={social.name}

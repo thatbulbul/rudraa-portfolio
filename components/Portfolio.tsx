@@ -45,6 +45,20 @@ const projects = [
     description: 'Emotional cinematic wedding ceremony edit',
     color: 'from-slate-700 to-slate-500',
   },
+   {
+    id: 7,
+    title: 'Wedding Highlight',
+    category: 'Social Media',
+    description: 'Emotional cinematic wedding ceremony edit',
+    color: 'from-slate-700 to-slate-500',
+  },
+   {
+    id: 8,
+    title: 'Wedding Highlight',
+    category: 'Social Media',
+    description: 'Emotional cinematic wedding ceremony edit',
+    color: 'from-slate-700 to-slate-500',
+  },
 ]
 
 export default function Portfolio() {
@@ -52,52 +66,64 @@ export default function Portfolio() {
 
   return (
     <section id="portfolio" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
+
+        {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Featured Work</h2>
-          <p className="text-muted-foreground text-lg">A selection of recent projects across multiple categories</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Featured Reels</h2>
+          <p className="text-muted-foreground text-lg">
+            Short-form edits &amp; cinematic vertical content
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* REELS GRID */}
+        <div className="flex flex-wrap justify-center gap-8">
           {projects.map((project) => (
             <div
               key={project.id}
               onMouseEnter={() => setHoveredId(project.id)}
               onMouseLeave={() => setHoveredId(null)}
-              className="group cursor-pointer"
+              className="group w-[240px] sm:w-[260px] cursor-pointer"
             >
-              <div className={`relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br ${project.color} border border-border transition-all duration-300 hover:shadow-lg`}>
-                {/* Placeholder background */}
+              {/* REEL CARD */}
+              <div
+                className={`relative aspect-[9/16] rounded-2xl overflow-hidden bg-gradient-to-br ${project.color} border border-border transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl`}
+              >
+                {/* Play icon center */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <svg className="w-12 h-12 mx-auto mb-2 opacity-60 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <div className="w-16 h-16 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center border border-white/20">
+                    <svg
+                      className="w-7 h-7 text-white ml-1"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 5v14l11-7z" />
                     </svg>
                   </div>
                 </div>
 
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <button className="relative w-16 h-16 flex items-center justify-center rounded-full bg-white/90 text-primary hover:bg-white transition-all duration-300 shadow-lg hover:scale-110" aria-label="Play video">
-                    <svg className="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </button>
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300" />
+
+                {/* Bottom Gradient Info (Reels Style) */}
+                <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                  <h3 className="font-semibold text-white text-sm">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs text-white/70">
+                    {project.category}
+                  </p>
                 </div>
               </div>
 
-              {/* Project info */}
-              <div className="mt-4">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-semibold text-lg transition-colors duration-300 group-hover:text-accent">{project.title}</h3>
-                  <span className="text-xs uppercase tracking-wide text-muted-foreground">{project.category}</span>
-                </div>
-                <p className="text-muted-foreground text-sm">{project.description}</p>
-              </div>
+              {/* Description */}
+              <p className="text-muted-foreground text-sm mt-3 text-center">
+                {project.description}
+              </p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )

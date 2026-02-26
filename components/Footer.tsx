@@ -1,90 +1,59 @@
 'use client'
 
+import Gravity, { MatterBody } from '@/components/fancy/physics/gravity'
+
+const rand = (min: number, max: number) =>
+  Math.random() * (max - min) + min
+
 export default function Footer() {
   return (
-    <footer className="border-t border-border py-12 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <h3 className="font-bold text-lg mb-4">Alexander Chen</h3>
-            <p className="text-muted-foreground text-sm">Professional video editor crafting cinematic stories.</p>
-          </div>
+    <footer className="border-t border-border py-4 px-4">
 
-          <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <a href="#" className="hover:text-accent transition-colors">
-                  Video Editing
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-accent transition-colors">
-                  Color Grading
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-accent transition-colors">
-                  Motion Graphics
-                </a>
-              </li>
-            </ul>
-          </div>
+      {/* ✅ Smaller + Scroll Safe */}
+      <div className="w-full h-[160px] relative overflow-hidden">
+        <Gravity gravity={{ x: 0, y: 0.6 }} className="w-full h-full">
 
-          <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <a href="#portfolio" className="hover:text-accent transition-colors">
-                  Portfolio
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="hover:text-accent transition-colors">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-accent transition-colors">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
+          <MatterBody x={`${rand(10, 90)}%`} y={`${rand(0, 15)}%`} angle={rand(-25, 25)}>
+            <div className="text-lg sm:text-xl md:text-2xl bg-[#0015ff] text-white rounded-full px-6 py-3">
+              Premiere Pro
+            </div>
+          </MatterBody>
 
-          <div>
-            <h4 className="font-semibold mb-4">Follow</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <a href="#" className="hover:text-accent transition-colors">
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-accent transition-colors">
-                  Vimeo
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-accent transition-colors">
-                  LinkedIn
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+          <MatterBody x={`${rand(10, 90)}%`} y={`${rand(0, 15)}%`} angle={rand(-25, 25)}>
+            <div className="text-lg sm:text-xl md:text-2xl bg-[#e794da] text-white rounded-full px-6 py-3">
+              Photoshop
+            </div>
+          </MatterBody>
 
-        <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-muted-foreground">
-          <p>&copy; 2024 Alexander Chen. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-accent transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-accent transition-colors">
-              Terms of Service
-            </a>
-          </div>
-        </div>
+          <MatterBody x={`${rand(10, 90)}%`} y={`${rand(0, 15)}%`} angle={rand(-25, 25)}>
+            <div className="text-lg sm:text-xl md:text-2xl bg-[#1f464d] text-white rounded-full px-6 py-3">
+              DaVinci Resolve
+            </div>
+          </MatterBody>
+
+          <MatterBody x={`${rand(10, 90)}%`} y={`${rand(0, 15)}%`} angle={rand(-25, 25)}>
+            <div className="text-lg sm:text-xl md:text-2xl bg-[#ff5941] text-white rounded-full px-6 py-3">
+              After Effects
+            </div>
+          </MatterBody>
+
+          <MatterBody x={`${rand(10, 90)}%`} y={`${rand(0, 15)}%`} angle={rand(-25, 25)}>
+            <div className="text-lg sm:text-xl md:text-2xl bg-[#f97316] text-white rounded-full px-6 py-3">
+              Color Grading
+            </div>
+          </MatterBody>
+
+          <MatterBody x={`${rand(10, 90)}%`} y={`${rand(0, 15)}%`} angle={rand(-25, 25)}>
+            <div className="text-lg sm:text-xl md:text-2xl bg-[#ffd726] text-black rounded-full px-6 py-3">
+              Motion Graphics
+            </div>
+          </MatterBody>
+
+        </Gravity>
+      </div>
+
+      <div className="max-w-6xl mx-auto border-t border-border pt-4 mt-4 text-center text-xs text-muted-foreground">
+        <p>&copy; 2024 Rudra Mittal. All rights reserved.</p>
       </div>
     </footer>
   )
